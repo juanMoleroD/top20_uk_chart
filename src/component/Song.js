@@ -1,8 +1,6 @@
 import React from "react";
 
 const Song = ({song, id}) => {
-
-    console.log(song)
     return(
         <div className="song">
             <img src={song["im:image"][2].label} alt="cover"/>
