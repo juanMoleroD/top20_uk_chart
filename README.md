@@ -1,3 +1,8 @@
+# Top 20 UK chart checker
+
+using the iTunes API the app provides you with the current top 20 from itunes in the UK charts. 
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
