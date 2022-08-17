@@ -10,12 +10,12 @@ const Chart = () => {
     const getSongs = () => {
         fetch("https://itunes.apple.com/gb/rss/topsongs/limit=20/json")
                         .then(response => response.json())
-                        .catch(data => console.log(data)) // capture the details if received.
+                        .catch(error => console.log(error)) // capture the details if received.
                         .then(data => {
-                            console.log(data.feed.entry)
+                            // console.log(data.feed.entry)
                             setSongs(data.feed.entry);
                         })
-                        .catch(console.log("error from API"))
+                        .catch(error => console.log("error from API: " + error))
     }
     
     return(
