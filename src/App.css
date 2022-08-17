@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+#main-header {
+  font-size: 80px;
+}
+
+.song {
+  display: flex;
+  margin: 20px;
+}
+.song > span {
+  font-size: 30px;
+  margin: 20px;
+}
