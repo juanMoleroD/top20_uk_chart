@@ -5,7 +5,8 @@ const Song = ({song, id}) => {
         <div className="song">
             <img src={song["im:image"][2].label} alt="cover"/>
             <div>
-                <p> No: {id + 1 } - {song.title.label} </p>
+                <h2>No: {id + 1 }</h2>
+                <h4>{song.title.label} </h4>
                 <audio controls>
                     <source src={song["link"][1].attributes.href} type={song.link[1].attributes.type}/>
                 </audio>
