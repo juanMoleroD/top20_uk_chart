@@ -35,6 +35,8 @@ nav {
   flex-wrap: wrap;
   justify-content: space-around;
   margin-bottom: 50px;
+  width: 80%;
+  margin: auto;
 }
 
 
@@ -42,7 +44,7 @@ nav {
   display: flex;
   margin: auto;
   margin-top: 35px;
-  height: 200px;
+  height: 230px;
   width: 45%;
   box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) ;
 }
