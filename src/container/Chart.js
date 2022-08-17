@@ -5,7 +5,7 @@ import GenreSelector from "../component/GenreSelector";
 const Chart = () => {
 
     const [songs, setSongs] = useState([]);
-    const [genre, setGenre] = useState('all')
+    const [genre, setGenre] = useState('all') //all is default
     const genreUrlMap = {
         all: "https://itunes.apple.com/gb/rss/topsongs/limit=20/json",
         rock: "https://itunes.apple.com/gb/rss/topsongs/limit=20/genre=21/json",
@@ -17,13 +17,11 @@ const Chart = () => {
     
     const getSongs = () => {
         fetch(genreUrlMap[genre])
-                        .then(response => response.json())
-                        .catch(error => console.log(error)) // capture the details if received.
-                        .then(data => {
-                            // console.log(data.feed.entry)
-                            setSongs(data.feed.entry);
-                        })
-                        .catch(error => console.log("error from API: " + error))
+            .catch(error => console.log(error))
+            .then(response => response.json())
+            .then(data => {
+                setSongs(data.feed.entry);})
+            .catch(error => console.log("error from API: " + error))
     }
     
     return(
@@ -35,7 +33,9 @@ const Chart = () => {
                 <h2>Select genre: </h2>
                 <GenreSelector setGenre={setGenre}/>
             </section>
-            <SongList songs={songs}/>
+            <main id="song-container">
+                <SongList songs={songs}/>
+            </main>
         </>
     )
 }
