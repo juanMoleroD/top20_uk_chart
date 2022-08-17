@@ -1,14 +1,22 @@
 import React, {useState, useEffect} from "react";
 import SongList from "../component/SongList";
+import GenreSelector from "../component/GenreSelector";
 
 const Chart = () => {
 
     const [songs, setSongs] = useState([]);
+    const [genre, setGenre] = useState('all')
+    const genreUrlMap = {
+        all: "https://itunes.apple.com/gb/rss/topsongs/limit=20/json",
+        rock: "https://itunes.apple.com/gb/rss/topsongs/limit=20/genre=21/json",
+        dance: "https://itunes.apple.com/gb/rss/topsongs/limit=20/genre=17/json",
+        country: "https://itunes.apple.com/gb/rss/topsongs/limit=20/genre=6/json"
+    }
 
-    useEffect( () => getSongs() , [])
+    useEffect( () => getSongs(), [genre])
     
     const getSongs = () => {
-        fetch("https://itunes.apple.com/gb/rss/topsongs/limit=20/json")
+        fetch(genreUrlMap[genre])
                         .then(response => response.json())
                         .catch(error => console.log(error)) // capture the details if received.
                         .then(data => {
@@ -21,6 +29,7 @@ const Chart = () => {
     return(
         <>
             <h1 id="main-header">Top 20 UK Chart</h1>
+            <GenreSelector setGenre={setGenre}/>
             <SongList songs={songs}/>
         </>
     )
