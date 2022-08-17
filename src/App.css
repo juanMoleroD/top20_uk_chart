@@ -37,12 +37,36 @@
   }
 }
 
+nav {
+  background-color: black;
+  color: white;
+
+
+}
+
 #main-header {
   font-size: 80px;
+  margin: 0;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  
+}
+
+#genre-bar {
+  padding-top: 20px;
+}
+
+#genre-bar > h2 {
+  padding-right: 20px;
+  margin: 0px;
+  padding: 20px;
+  display: inline;
 }
 
 #genre-select {
   font-size: 20px;
+  display: inline;
+
 }
 
 .song {

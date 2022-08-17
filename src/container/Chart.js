@@ -28,8 +28,13 @@ const Chart = () => {
     
     return(
         <>
-            <h1 id="main-header">Top 20 UK Chart</h1>
-            <GenreSelector setGenre={setGenre}/>
+            <nav>
+                <h1 id="main-header">Top 20 UK Chart</h1>
+            </nav>
+            <section id="genre-bar">
+                <h2>Select genre: </h2>
+                <GenreSelector setGenre={setGenre}/>
+            </section>
             <SongList songs={songs}/>
         </>
     )
